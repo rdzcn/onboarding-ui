@@ -14,7 +14,6 @@ module.exports = {
     "airbnb-typescript",
     "plugin:import/typescript",
     "plugin:unicorn/recommended",
-    "plugin:lodash/recommended",
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
