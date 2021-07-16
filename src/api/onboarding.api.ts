@@ -13,7 +13,7 @@ export interface OnboardingApiResponse<T> {
   per_page: number;
   total: number;
   total_pages: number;
-  data: T[];
+  data: T | T[];
 }
 
 const onboardingApi = axios.create({

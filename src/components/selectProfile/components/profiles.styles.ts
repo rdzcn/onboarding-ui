@@ -7,7 +7,7 @@ export const ProfilesContainer = styled.ul`
   margin-top: 36px;
 `;
 
-export const ProfileWrapper = styled.li`
+export const ProfileWrapper = styled.input`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,9 +18,9 @@ export const ProfileWrapper = styled.li`
   }
 `;
 
-export const Avatar = styled.img`
-  width: 120px;
-  height: 120px;
+export const Avatar = styled.img<{ size?: "md" | "lg" }>`
+  width: ${({ size = "md" }) => (size === "lg" ? "256px" : "120px")};
+  height: ${({ size = "md" }) => (size === "lg" ? "256px" : "120px")};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   box-shadow: ${({ theme }) => theme.shadows.outset.first};
   margin-bottom: 12px;

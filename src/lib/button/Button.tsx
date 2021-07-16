@@ -33,7 +33,7 @@ const Button: FC<ButtonProps & PrimitiveButtonProps> = (props) => {
     buttonType === "secondary" ? SecondaryButton : PrimaryButton;
 
   return (
-    <ButtonElement as={styledAs} {...rest}>
+    <ButtonElement as={styledAs} href={href} {...rest}>
       <ButtonInnerWrapper>
         <ButtonTextContainer>
           <Header>{children}</Header>
