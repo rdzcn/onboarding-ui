@@ -16,12 +16,22 @@ export default createGlobalStyle<{ theme: OnboardingTheme }>`
     scroll-behavior: smooth;
   }
 
-  div, input, form, header, textarea {
+  div, input, form, header, button, textarea {
     box-sizing: border-box;
+  }
+
+  ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   button {
     color: ${({ theme }) => theme.colors.grey[100]};
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
   }
 
   input, textarea, select {

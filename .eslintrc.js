@@ -50,8 +50,7 @@ module.exports = {
       },
     ],
     "no-restricted-imports": "error",
-
-    // Turn off unwanted rules from presets:
+    "react/jsx-props-no-spreading": "off",
     "consistent-return": "off",
     "react/prop-types": "off",
     "react/require-default-props": "off",
@@ -66,10 +65,6 @@ module.exports = {
     "unicorn/prefer-query-selector": "off",
   },
   overrides: [
-    {
-      files: ["cypress/**"],
-      extends: ["plugin:cypress/recommended", "prettier"],
-    },
     {
       files: ["**/__tests__/**", "**/*.test.js"],
       env: {

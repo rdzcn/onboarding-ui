@@ -9,6 +9,7 @@ export const LayoutContainer = styled.div`
   flex-direction: column;
   margin: 0 auto;
   width: 100vw;
+  height: 100%;
 
   @media (min-width: ${mediaSizes.desktop}em) {
     width: 900px;

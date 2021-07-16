@@ -7,6 +7,7 @@ export interface ProfileI {
   last_name: string;
   avatar: string;
 }
+
 export interface OnboardingApiResponse<T> {
   page: number;
   per_page: number;
