@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
+import { useTranslation } from "react-i18next";
 import {
   SelectProfileContainer,
   Txt,
@@ -18,6 +19,7 @@ const SelectProfile = () => {
   const back = () => {
     history.goBack();
   };
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchProfiles = async () => {
@@ -31,13 +33,13 @@ const SelectProfile = () => {
 
   return (
     <SelectProfileContainer>
-      <Txt>Choose your profile</Txt>
+      <Txt>{t("chooseProfile")}</Txt>
       {profiles && <Profiles profiles={profiles} />}
       <ButtonGroup>
         <Button buttonType="secondary" onClick={back}>
-          Back
+          {t("back")}
         </Button>
-        <Button>Next</Button>
+        <Button>{t("next")}</Button>
       </ButtonGroup>
     </SelectProfileContainer>
   );

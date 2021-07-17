@@ -4,6 +4,7 @@ import Theming from "./assets/styles/theme/Theming";
 import Content from "./components/content/Content";
 import Header from "./components/header/Header";
 import { ProfilesProvider } from "./contexts/profile.context";
+import "./config/init18n";
 
 const App = () => (
   <Theming>

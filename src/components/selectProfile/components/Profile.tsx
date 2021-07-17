@@ -8,8 +8,8 @@ interface PropsI {
   profile: ProfileI;
 }
 const Profile = ({ profile }: PropsI) => {
-  const { id, first_name: firstName, avatar: avatarUrl } = profile;
-  const { setProfileId, profileId } = useProfiles();
+  const { first_name: firstName, avatar: avatarUrl } = profile;
+  const { profileId, setProfileId } = useProfiles();
   const history = useHistory();
 
   useEffect(() => {
@@ -18,21 +18,14 @@ const Profile = ({ profile }: PropsI) => {
     }
   }, [profileId]);
 
-  const selectProfile = (e: any) => setProfileId(e.target.value);
+  const selectProfile = (e: any) => setProfileId(+e.target.value);
 
   return (
     <>
-      <ProfileWrapper
-        id={String(id)}
-        value={id}
-        name="profile"
-        type="radio"
-        onChange={selectProfile}
-      />
-      <label htmlFor={String(id)}>
+      <ProfileWrapper as="button" type="button" onClick={selectProfile}>
         <Avatar src={avatarUrl} alt={`${firstName} profile photo`} />
         <Txt>{firstName}</Txt>
-      </label>
+      </ProfileWrapper>
     </>
   );
 };

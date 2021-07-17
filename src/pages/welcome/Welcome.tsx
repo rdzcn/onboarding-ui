@@ -9,6 +9,7 @@ const Welcome = () => {
   const [profile, setProfile] = useState<ProfileI | null>(null);
 
   const { profileId } = useProfiles();
+  console.log("RENDERED");
 
   useEffect(() => {
     if (profileId) {
