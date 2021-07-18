@@ -42,6 +42,7 @@ module.exports = {
         tsx: "never",
       },
     ],
+    "no-console": ["error", { allow: ["warn", "error"] }],
     "unicorn/filename-case": [
       "error",
       {
