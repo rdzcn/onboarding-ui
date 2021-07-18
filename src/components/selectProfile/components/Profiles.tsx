@@ -1,6 +1,6 @@
 import React from "react";
 import { ProfileI } from "../../../api/onboarding.api";
-import Profile from "./Profile";
+import ProfileCard from "./ProfileCard";
 import { ProfilesContainer } from "./profiles.styles";
 
 interface PropsI {
@@ -10,7 +10,7 @@ interface PropsI {
 const Profiles = ({ profiles }: PropsI) => (
   <ProfilesContainer>
     {profiles.map((profile) => (
-      <Profile key={profile.id} profile={profile} />
+      <ProfileCard key={profile.id} profile={profile} />
     ))}
   </ProfilesContainer>
 );
