@@ -8,13 +8,6 @@ export const SelectProfileContainer = styled.div`
   width: 100%;
 `;
 
-export const Txt = styled.span`
-  text-align: center;
-  width: 100%;
-  font-size: ${({ theme }) => theme.typography.fontSizes.h4};
-  line-height: ${({ theme }) => theme.typography.lineHeights.large};
-`;
-
 export const ButtonGroup = styled.div`
   display: flex;
   align-items: center;

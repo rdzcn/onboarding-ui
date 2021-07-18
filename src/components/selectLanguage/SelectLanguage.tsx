@@ -1,24 +1,18 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
-import {
-  SelectLanguageContainer,
-  Txt,
-  ButtonGroup,
-} from "./selectLanguage.styles";
+import { SelectLanguageContainer, ButtonGroup } from "./selectLanguage.styles";
 import Select from "../../lib/select/Select";
 import Button from "../../lib/button/Button";
+import { Txt } from "../../contexts/text.context";
 
-const SelectLanguage = () => {
-  const { t } = useTranslation();
-
-  return (
-    <SelectLanguageContainer>
-      <Txt>{t("selectLanguage")}</Txt>
-      <Select />
-      <ButtonGroup>
-        <Button href="/landing/profiles">{t("next")}</Button>
-      </ButtonGroup>
-    </SelectLanguageContainer>
-  );
-};
+const SelectLanguage = () => (
+  <SelectLanguageContainer>
+    <Txt txtKey="selectLanguage" />
+    <Select />
+    <ButtonGroup>
+      <Button href="/landing/profiles">
+        <Txt txtKey="next" />
+      </Button>
+    </ButtonGroup>
+  </SelectLanguageContainer>
+);
 export default SelectLanguage;
