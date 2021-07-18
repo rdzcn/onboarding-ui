@@ -20,7 +20,6 @@ const useLocalStorage = <V>(
       }
     } catch (error) {
       localStorage.removeItem(key);
-      console.error(error);
     }
     return null;
   }, [key]);

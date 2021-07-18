@@ -8,7 +8,6 @@ const getProfiles = async (): Promise<OnboardingApiResponse<ProfileI> | null> =>
     const response = await onboardingApi.get("/");
     return response.data;
   } catch (error) {
-    console.error(error);
     return null;
   }
 };
@@ -20,7 +19,6 @@ const getProfile = async (
     const response = await onboardingApi.get(`/${id}`);
     return response.data;
   } catch (error) {
-    console.error(error);
     return null;
   }
 };

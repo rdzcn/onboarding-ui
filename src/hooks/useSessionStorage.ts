@@ -20,7 +20,6 @@ const useSessionStorage = <V>(
       }
     } catch (error) {
       sessionStorage.removeItem(key);
-      console.error(error);
     }
     return null;
   }, [key]);
