@@ -3,8 +3,12 @@ import { SelectContainer } from "./select.styles";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { useTexts } from "../../contexts/text.context";
 
-const Select = () => {
-  const [getStoredLng] = useLocalStorage<string>("lng", "en-US");
+interface PropsI {
+  isHeader?: boolean;
+}
+
+const Select = ({ isHeader = false }: PropsI) => {
+  const [getStoredLng] = useLocalStorage<string>("language", "en-US");
   const { setLanguageData } = useTexts();
 
   const onChange = (e: any) => {
@@ -12,7 +16,7 @@ const Select = () => {
   };
 
   return (
-    <SelectContainer onChange={onChange}>
+    <SelectContainer onChange={onChange} isHeader={isHeader}>
       <option key="english" selected={getStoredLng() === "en-US"} value="en-US">
         English
       </option>

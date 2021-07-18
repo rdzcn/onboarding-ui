@@ -29,6 +29,8 @@ module.exports = {
   rules: {
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/naming-convention": "off",
+    "no-loop-func": "off",
     "no-restricted-globals": ["error", ...restrictedGlobals],
     "import/extensions": [
       "error",

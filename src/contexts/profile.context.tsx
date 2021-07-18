@@ -5,14 +5,14 @@ import React, {
   useContext,
   useState,
 } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
+import useSessionStorage from "../hooks/useSessionStorage";
 import { ProfileI } from "../api/onboarding.api";
 
 export type ProfileContextI = {
   profileId: number | null;
+  setProfileIdData: (data: number | null) => void;
   profiles: null | ProfileI[];
-  setProfileId: (id: number | null) => void;
-  setProfileData: (data: ProfileI[] | null) => Promise<void>;
+  setProfileData: (data: ProfileI[] | null) => void;
 };
 
 const ProfileContext = createContext<ProfileContextI | null>(null);
@@ -28,17 +28,29 @@ const useProfiles = (): ProfileContextI => {
 type ProfilesProviderProps = PropsWithChildren<{}>;
 
 const ProfilesProvider = ({ children }: ProfilesProviderProps) => {
-  const [getStoredProfiles, setStoredProfiles] = useLocalStorage<
+  const [getStoredProfileId, setStoredProfileId] = useSessionStorage<
+    number | null
+  >("profileId", null);
+  const [getStoredProfiles, setStoredProfiles] = useSessionStorage<
     ProfileI[] | null
   >("profiles", null);
 
+  const [profileId, setProfileId] = useState<number | null>(
+    getStoredProfileId(),
+  );
   const [profiles, setProfiles] = useState<ProfileI[] | null>(
     getStoredProfiles(),
   );
-  const [profileId, setProfileId] = useState<number | null>(null);
 
+  const setProfileIdData = useCallback(
+    (data: number | null) => {
+      setProfileId(data);
+      setStoredProfileId(data);
+    },
+    [setProfileId, setStoredProfileId],
+  );
   const setProfileData = useCallback(
-    async (data: ProfileI[] | null) => {
+    (data: ProfileI[] | null) => {
       setProfiles(data);
       setStoredProfiles(data);
     },
@@ -48,7 +60,7 @@ const ProfilesProvider = ({ children }: ProfilesProviderProps) => {
   const value: ProfileContextI = {
     profileId,
     profiles,
-    setProfileId,
+    setProfileIdData,
     setProfileData,
   };
   return (

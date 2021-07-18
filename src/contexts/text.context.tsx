@@ -63,7 +63,7 @@ type TextsProviderProps = PropsWithChildren<{}>;
 const TextsProvider = ({ children }: TextsProviderProps) => {
   const [getStoredLang, setStoredLang] = useLocalStorage<string>(
     "language",
-    "en-EN",
+    "en-US",
   );
   const [getStoredTexts, setStoredTexts] = useSessionStorage<TextData | null>(
     "texts",

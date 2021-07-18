@@ -19,6 +19,7 @@ export const PrimaryButton = styled.button`
     color: ${theme.colors.grey[0]};
     height: 48px;
     width: 100%;
+    min-width: 160px;
     text-decoration: none;
     transition: all ${theme.transitions.duration.shorter}
       ${theme.transitions.easing.easeIn};

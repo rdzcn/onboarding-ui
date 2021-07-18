@@ -32,10 +32,18 @@ export const ElementWrapper = styled.option<IElementWrapper>(
   `,
 );
 
-export const SelectContainer = styled.select`
+export const SelectContainer = styled.select<{ isHeader: boolean }>`
   width: 100%;
-  max-width: 256px;
+  max-width: 160px;
   margin-top: 12px;
+
+  ${({ isHeader }) =>
+    isHeader &&
+    css`
+      position: absolute;
+      top: 24px;
+      right: 24px;
+    `}
 `;
 
 const fadeIn = keyframes`

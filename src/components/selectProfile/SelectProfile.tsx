@@ -14,11 +14,17 @@ import { useProfiles } from "../../contexts/profile.context";
 
 const SelectProfile = () => {
   const [profiles, setProfiles] = useState<ProfileI[] | null>(null);
-  const { setProfileData } = useProfiles();
+  const { profileId } = useProfiles();
   const history = useHistory();
   const back = () => {
     history.goBack();
   };
+  const next = () => {
+    if (profileId) {
+      history.push("/welcome");
+    }
+  };
+
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -26,7 +32,6 @@ const SelectProfile = () => {
       const response = await getProfiles();
       if (!response) return null;
       setProfiles(response.data as ProfileI[]);
-      setProfileData(response.data as ProfileI[]);
     };
     fetchProfiles();
   }, []);
@@ -39,7 +44,7 @@ const SelectProfile = () => {
         <Button buttonType="secondary" onClick={back}>
           {t("back")}
         </Button>
-        <Button>{t("next")}</Button>
+        <Button onClick={next}>{t("next")}</Button>
       </ButtonGroup>
     </SelectProfileContainer>
   );

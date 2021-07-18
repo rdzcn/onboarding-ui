@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ProfileI } from "../../api/onboarding.api";
 import { Avatar } from "../../components/selectProfile/components/profiles.styles";
 import { useProfiles } from "../../contexts/profile.context";
+import { Txt } from "../../contexts/text.context";
 import { getProfile } from "../../requests/profiles.request";
 import { WelcomeContainer } from "./welcome.styles";
 
@@ -27,6 +28,7 @@ const Welcome = () => {
   return (
     profile && (
       <WelcomeContainer>
+        <Txt txtKey="welcomeMessage" options={{ name: profile.first_name }} />
         <Avatar src={profile.avatar} alt="profile photo" size="lg" />
       </WelcomeContainer>
     )

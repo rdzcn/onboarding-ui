@@ -10,8 +10,8 @@ import "./config/init18n";
 const App = () => (
   <Theming>
     <BrowserRouter>
-      <Header />
       <TextsProvider>
+        <Header />
         <ProfilesProvider>
           <Content />
         </ProfilesProvider>

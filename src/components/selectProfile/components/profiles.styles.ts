@@ -12,6 +12,7 @@ export const ProfileWrapper = styled.input`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   &:not(:last-child) {
     margin-right: 24px;
