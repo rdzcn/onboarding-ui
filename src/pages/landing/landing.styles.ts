@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledText } from "../../contexts/text.context";
 
 export const LandingContainer = styled.div`
   display: flex;
@@ -6,4 +7,11 @@ export const LandingContainer = styled.div`
   align-items: center;
   height: 100%;
   width: 900px;
+`;
+
+export const Header = styled(StyledText)`
+  font-size: 36px;
+  line-height: 1.5;
+  margin-bottom: 96px;
+  font-weight: bold;
 `;

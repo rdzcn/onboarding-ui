@@ -5,14 +5,4 @@ export const WelcomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  & > span {
-    font-size: 30px;
-    line-height: 1.5;
-    font-weight: bold;
-  }
-
-  & > img {
-    margin-top: 120px;
-  }
 `;

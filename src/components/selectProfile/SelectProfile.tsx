@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { SelectProfileContainer, ButtonGroup } from "./selectProfile.styles";
+import { Header } from "../../pages/landing/landing.styles";
 import Button from "../../lib/button/Button";
 import getProfiles from "../../requests/profiles.request";
 import { ProfileI } from "../../api/onboarding.api";
@@ -32,6 +33,7 @@ const SelectProfile = () => {
 
   return (
     <SelectProfileContainer>
+      <Header txtKey="Step 2" />
       <Txt txtKey="chooseProfile" />
       {profiles && <Profiles profiles={profiles} />}
       <ButtonGroup>

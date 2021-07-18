@@ -19,6 +19,7 @@ export const Avatar = styled.img<{ size?: "md" | "lg" }>`
   width: ${({ size = "md" }) => (size === "lg" ? "256px" : "120px")};
   height: ${({ size = "md" }) => (size === "lg" ? "256px" : "120px")};
   border-radius: ${({ theme }) => theme.borderRadius.small};
+  box-shadow: ${({ theme }) => theme.shadows.outset.first};
   margin-bottom: 12px;
 `;
 
