@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { SelectContainer } from "./select.styles";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import { useTexts } from "../../contexts/text.context";
 
 const Select = () => {
-  const [storedLng, setStoredLng] = useLocalStorage<string | null>(
-    "lng",
-    "en-US",
-  );
-  const [lng, setLng] = useState(storedLng);
+  const [getStoredLng] = useLocalStorage<string>("lng", "en-US");
+  const { setLanguageData } = useTexts();
 
   const onChange = (e: any) => {
-    setLng(e.target.value);
-    setStoredLng(e.target.value);
+    setLanguageData(e.target.value);
   };
 
   return (
     <SelectContainer onChange={onChange}>
-      <option key="english" selected={lng === "en-US"} value="en-US">
+      <option key="english" selected={getStoredLng() === "en-US"} value="en-US">
         English
       </option>
-      <option key="german" selected={lng === "de-DE"} value="de-DE">
+      <option key="german" selected={getStoredLng() === "de-DE"} value="de-DE">
         Deutsch
       </option>
     </SelectContainer>

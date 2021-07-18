@@ -10,6 +10,7 @@ import Button from "../../lib/button/Button";
 
 const SelectLanguage = () => {
   const { t } = useTranslation();
+
   return (
     <SelectLanguageContainer>
       <Txt>{t("selectLanguage")}</Txt>

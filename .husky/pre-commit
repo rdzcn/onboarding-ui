@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Support nvm outside of terminal
+#
+# Source:
+# https://github.com/typicode/husky/issues/912#issuecomment-817522060
+if [ -d "$HOME/.nvm" ]; then
+  export NVM_DIR="$HOME/.nvm/nvm.sh"
+  . "$(dirname $NVM_DIR)/nvm.sh"
+
+  export NVM_DIR="$HOME/.nvm"
+  a=$(nvm ls | grep 'node')
+  b=${a#*(-> }
+  v=${b%%[)| ]*}
+
+  export PATH="$NVM_DIR/versions/node/$v/bin:$PATH"
+fi
+
+npx lint-staged

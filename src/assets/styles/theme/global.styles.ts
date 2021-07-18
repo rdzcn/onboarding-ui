@@ -18,6 +18,7 @@ export default createGlobalStyle<{ theme: OnboardingTheme }>`
 
   div, input, form, header, button, textarea {
     box-sizing: border-box;
+    background: transparent;
   }
 
   ul, li {

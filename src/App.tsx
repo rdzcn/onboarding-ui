@@ -4,15 +4,18 @@ import Theming from "./assets/styles/theme/Theming";
 import Content from "./components/content/Content";
 import Header from "./components/header/Header";
 import { ProfilesProvider } from "./contexts/profile.context";
+import { TextsProvider } from "./contexts/text.context";
 import "./config/init18n";
 
 const App = () => (
   <Theming>
     <BrowserRouter>
       <Header />
-      <ProfilesProvider>
-        <Content />
-      </ProfilesProvider>
+      <TextsProvider>
+        <ProfilesProvider>
+          <Content />
+        </ProfilesProvider>
+      </TextsProvider>
     </BrowserRouter>
   </Theming>
 );
