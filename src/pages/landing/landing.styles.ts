@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import { StyledText } from "../../contexts/text.context";
+import mediaSizes from "../../assets/styles/mediaTypes";
 
 export const LandingContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 900px;
+  width: 100%;
+
+  @media (min-width: ${mediaSizes.desktop}em) {
+    width: 900px;
+  }
 `;
 
 export const Header = styled(StyledText)`
@@ -14,4 +19,5 @@ export const Header = styled(StyledText)`
   line-height: 1.5;
   margin-bottom: 96px;
   font-weight: bold;
+  text-align: center;
 `;

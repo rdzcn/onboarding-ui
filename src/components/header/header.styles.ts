@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import mediaSizes from "../../assets/styles/mediaTypes";
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -9,5 +10,9 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderLogo = styled.img`
-  width: 30rem;
+  width: 80%;
+
+  @media (min-width: ${mediaSizes.desktop}em) {
+    width: 30rem;
+  }
 `;

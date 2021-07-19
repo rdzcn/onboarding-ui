@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {
-    "no-use-before-define": "off",
+    "import/no-useless-path-segments": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/naming-convention": "off",
     "no-loop-func": "off",

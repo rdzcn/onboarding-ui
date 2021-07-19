@@ -1,10 +1,12 @@
 import styled, { css } from "styled-components";
+import mediaSizes from "../../../assets/styles/mediaTypes";
 
 export const ProfilesContainer = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 36px;
+  flex-wrap: wrap;
 `;
 
 export const ProfileSelector = styled.input`
@@ -28,14 +30,18 @@ export const ProfileCardWrapper = styled.div<{ isFocus: boolean }>`
     padding: 6px;
     box-shadow: ${theme.shadows.outset.first};
     border-radius: ${theme.borderRadius.small};
-
-    &:not(:last-child) {
-      margin-right: 24px;
-    }
+    margin: 0 12px 12px 0;
 
     ${isFocus &&
     css`
       box-shadow: 0 0 3px 6px ${theme.colors.blue[15]};
     `}
+
+    @media (min-width: ${mediaSizes.desktop}em) {
+      margin: 0;
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
+    }
   `}
 `;
