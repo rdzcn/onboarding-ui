@@ -10,7 +10,7 @@ export const LandingContainer = styled.div`
   width: 100%;
 
   @media (min-width: ${mediaSizes.desktop}em) {
-    width: 900px;
+    width: 960px;
   }
 `;
 

@@ -13,6 +13,7 @@ export const ButtonGroup = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 36px;
+  margin-bottom: 36px;
 
   & > button:not(:last-child) {
     margin-right: 24px;

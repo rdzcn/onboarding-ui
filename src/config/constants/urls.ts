@@ -1,3 +1,1 @@
-const PROFILES_REQUEST_URL = process.env.REACT_APP_BASE_URL;
-
-export default PROFILES_REQUEST_URL;
+export default process.env.REACT_APP_BASE_URL;

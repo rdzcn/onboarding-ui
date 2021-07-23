@@ -39,6 +39,7 @@ export const ProfileCardWrapper = styled.div<{ isFocus: boolean }>`
 
     @media (min-width: ${mediaSizes.desktop}em) {
       margin: 0;
+
       &:not(:last-child) {
         margin-right: 24px;
       }

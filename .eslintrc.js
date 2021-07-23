@@ -30,7 +30,9 @@ module.exports = {
     "import/no-useless-path-segments": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-unused-vars": "off",
     "no-loop-func": "off",
+    "no-unused-vars": "off",
     "no-restricted-globals": ["error", ...restrictedGlobals],
     "import/extensions": [
       "error",
